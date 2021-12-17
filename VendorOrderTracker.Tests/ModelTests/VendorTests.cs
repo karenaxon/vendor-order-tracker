@@ -49,5 +49,14 @@ namespace VendorOrderTracker.Tests
       CollectionAssert.AreEqual(vendorsList, testList);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      Vendor newVendor1 = new Vendor("Sweet Pastries", "Shop on Main Street");
+      Vendor newVendor2 = new Vendor("Yummy Goods", "A place to eat good");
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(result, newVendor2);
+    }
+
   }
 }
