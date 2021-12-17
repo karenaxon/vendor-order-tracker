@@ -20,6 +20,15 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
+    [TestMethod]
+    public void GetDate_ReturnDate_String()
+    {
+      string date = "06/25/2021";
+      Order newOrder = new Order("Monday", "Every Monday morning", "435.78", date);
+      string instanceDate = newOrder.Date;
+      Assert.AreEqual(date, instanceDate);
+    }
+
   }
     
 }
