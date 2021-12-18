@@ -1,0 +1,21 @@
+@{
+  Layout ="_Layout";
+}
+@using VendorOrderTracker.Models;
+
+<p class="h1 mt-3">@Model.Name's Orders</p>
+
+@if(@Model.OrdersList.Count == 0)
+{
+  <h3 class="my-3">No orders exist for this vendor yet.</h3>
+}
+
+<ul>
+  @foreach(Order order in @Model.OrdersList)
+  {
+    <li>Title: @order.Title</li>
+    <li>Title: @order.Description</li>
+    <li>Title: @order.Price</li>
+    <li>Title: @order.Date</li>
+  }
+</ul>
