@@ -8,14 +8,15 @@ namespace VendorOrderTracker.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public int Id { get; }
-    public List<Order> OrdersList { get; set; }
+    public List<Order> Items { get; set; }
 
     public Vendor(string name, string description)
     {
       Name = name;
+      Description = description;
       _vendorsList.Add(this);
       Id = _vendorsList.Count;
-      OrdersList = new List<Order>{};
+      Items = new List<Order>{};
     }
 
     public static void ClearAll()
@@ -35,8 +36,7 @@ namespace VendorOrderTracker.Models
 
     public void AddOrder(Order order)
     {
-      OrdersList.Add(order);
+      Items.Add(order);
     }
-
   }
 }
